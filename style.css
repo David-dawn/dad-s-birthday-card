@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f8ff;
+    overflow: hidden;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #00f;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+  
+  .title {
+    font-size: 2.5em;
+    color: #00f;
+    margin-bottom: 20px;
+  }
+  
+  .message {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .image-container {
+    margin-bottom: 20px;
+  }
+  
+  .animated-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    transition: transform 1s ease;
+  }
+  
+  #animateButton {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #00f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #animateButton:hover {
+    background-color: #0055ff;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .title, .message {
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .balloons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .balloon {
+    position: absolute;
+    bottom: -150px;
+    width: 100px;
+    opacity: 0.8;
+  }
+  
+  .balloon1 {
+    left: 10%;
+    animation: balloonMove 6s ease-in-out infinite;
+  }
+  
+  .balloon2 {
+    left: 50%;
+    animation: balloonMove 7s ease-in-out infinite;
+  }
+  
+  .balloon3 {
+    left: 80%;
+    animation: balloonMove 8s ease-in-out infinite;
+  }
+  
+  @keyframes balloonMove {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-110vh) rotate(360deg);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .title {
+      font-size: 2em;
+    }
+  
+    .message {
+      font-size: 1em;
+    }
+  
+    .animated-image {
+      max-width: 200px;
+    }
+  
+    #animateButton {
+      font-size: 0.8em;
+    }
+  }
+  
